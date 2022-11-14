@@ -32,7 +32,7 @@ The architecture of our RDLUF with $K$ stages (iterations). RDLGD and PM denote 
 <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/MixS2T.png" width = "700" height = "500" alt="">
 </div>
 
-Diagram of the MixS2 Transformer. (a) MixS2 Transformer adopts a U-shaped structure with block interactions. (b) The basic unit of the MixS2 Transformer, MixS2 block. (c) The structure of the spectral self-attention branch. (d) The structure of the lightweight inception branch. (e) The components of the gated-Dconv feed-forward network(GDFN)
+Diagram of the Mix $S^2$ Transformer. (a) Mix $S^2$ Transformer adopts a U-shaped structure with block interactions. (b) The basic unit of the MixS2 Transformer, Mix $S^2$ block. (c) The structure of the spectral self-attention branch. (d) The structure of the lightweight inception branch. (e) The components of the gated-Dconv feed-forward network(GDFN)
 
 
 # Usage 
