@@ -1,4 +1,4 @@
-# RDLUF_MixS2 for Coded Aperture Snapshot Spectral Imaging (CASSI)
+# RDLUF MixS2 for CASSI
 
 
 This repo is the implementation of paper "Residual Degradation Learning Unfolding Framework with Mixing Priors across Spectral and Spatial for Compressive Spectral Imaging"
