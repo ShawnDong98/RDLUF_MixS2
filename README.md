@@ -95,7 +95,7 @@ Download cave_1024_28 ([Baidu Disk](https://pan.baidu.com/s/1X_uXxgyO-mslnCTn4io
 cd RDLUF_MixS2/simulation/train_code/
 
 # RdLUF-MixS2 3stage
-python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 3 --body_share_params 1  --clip_grad
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 3 --body_share_params 0  --clip_grad
 
 # RdLUF-MixS2 5stage
 python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 5 --body_share_params 1  --clip_grad
@@ -105,14 +105,41 @@ python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 
 
 # RdLUF-MixS2 9stage
 python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 9 --body_share_params 1  --clip_grad
-
-# RdLUF-MixS2 9stage with independent parameters
-python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 9 --body_share_params 0  --clip_grad
 ```
 
 The training log, trained model, and reconstrcuted HSI will be available in `RDLUF_MixS2/simulation/train_code/exp/` .
 
 ### Testing
+
+Place the pretrained model to `RDLUF_MixS2/simulation/test_code/checkpoints/`
+
+Run the following command to test the model on the simulation dataset.
+
+```
+cd RDLUF_MixS2/simulation/test_code/
+
+
+# RdLUF-MixS2 3stage
+python test.py --template duf_mixs2 --stage 3 --body_share_params 0 --outf ./exp/duf_mixs2_3stage/ --method duf_mixs2 --pretrained_model_path ./checkpoints/RDLUF_MixS2_3stage.pth
+
+# RdLUF-MixS2 5stage
+python test.py --template duf_mixs2 --stage 5 --body_share_params 1 --outf ./exp/duf_mixs2_5stage/ --method duf_mixs2 --pretrained_model_path ./checkpoints/RDLUF_MixS2_5stage.pth
+
+# RdLUF-MixS2 7stage
+python test.py --template duf_mixs2 --stage 7 --body_share_params 1 --outf ./exp/duf_mixs2_7stage/ --method duf_mixs2 --pretrained_model_path ./checkpoints/RDLUF_MixS2_7stage.pth
+
+# RdLUF-MixS2 9stage
+python test.py --template duf_mixs2 --stage 9 --body_share_params 1 --outf ./exp/duf_mixs2_9stage/ --method duf_mixs2 --pretrained_model_path ./checkpoints/RDLUF_MixS2_9stage.pth
+```
+
+- The reconstrcuted HSIs will be output into `RDLUF_MixS2/simulation/test_code/exp/`
+- Place the reconstructed results into `RDLUF_MixS2/simulation/test_code/Quality_Metrics/results` and
+
+```
+Run cal_quality_assessment.m
+```
+
+to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 ### Visualization
 
