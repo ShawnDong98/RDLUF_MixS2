@@ -19,19 +19,12 @@ from torch.autograd import Variable
 import datetime
 from option import opt
 from tqdm import tqdm
-import wandb
 from pprint import pprint
 import seaborn as sns
 
 import losses
 from schedulers import get_cosine_schedule_with_warmup
 
-wandb.init(
-    project = "HSI",
-    config = opt,
-    name = opt.exp_name,
-    entity="iisc-xdu"
-)
 
 pprint(opt)
 
@@ -160,11 +153,6 @@ def test(epoch, logger):
         v = make_grid(v, nrows=2) # torch 1.12
         x = make_grid(x, nrows=2) # torch 1.12
 
-        v_images = wandb.Image(v, caption=f"v")
-        x_images = wandb.Image(x, caption=f"x")
-
-        image_log[f'stage{i}_x_v'] = [v_images, x_images]
-
 
     pred = torch.cat(pred, dim = 0)
     pred = np.transpose(pred.detach().cpu().numpy(), (0, 2, 3, 1)).astype(np.float32)
@@ -183,17 +171,8 @@ def main():
     psnr_max = 0
     for epoch in range(start_epoch + 1, opt.max_epoch + 1):
         print(f"==>Epoch{epoch}")
-        log_dict = {}
         train_loss = train(epoch, logger)
-        log_dict['train_loss'] = train_loss
         (pred, truth, psnr_all, ssim_all, psnr_mean, ssim_mean, image_log) = test(epoch, logger)
-        log_dict['test_psnr'] = psnr_mean
-        log_dict['test_ssim'] = ssim_mean
-        log_dict.update(image_log)
-        lr_fig = sns.lineplot(x=range(len(lrs)), y=lrs)
-        lr_fig = wandb.Image(lr_fig, caption=f"lr")
-        log_dict['lr'] = lr_fig
-        wandb.log(log_dict)
         if psnr_mean > psnr_max:
             psnr_max = psnr_mean
             if psnr_mean > 28:
