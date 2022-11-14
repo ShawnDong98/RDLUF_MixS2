@@ -24,11 +24,15 @@ To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (
 <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/RDLUF.png" width = "700" height = "300" alt="">
 </div>
 
+The architecture of our RDLUF with $K$ stages (iterations). RDLGD and PM denote the Residual Degradation Learning Gradient Descent module and the Proximal Mapping module in each stage. There is a stage interaction between stages.
+
 ## Mixing priors across Spectral and Spatial Transformer(PM)
 
 <div align=center>
 <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/MixS2T.png" width = "700" height = "500" alt="">
 </div>
+
+Diagram of the MixS2 Transformer. (a) MixS2 Transformer adopts a U-shaped structure with block interactions. (b) The basic unit of the MixS2 Transformer, MixS2 block. (c) The structure of the spectral self-attention branch. (d) The structure of the lightweight inception branch. (e) The components of the gated-Dconv feed-forward network(GDFN)
 
 
 # Usage 
