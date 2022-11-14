@@ -10,6 +10,8 @@ To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (
 
 # Comparison with State-of-the-art Methods
 
+<img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/performance.png" width = "200" height = "300" alt="" align=center />
+
 ![](./figures/performance.png)
 
 # Architecture
