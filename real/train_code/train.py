@@ -23,15 +23,6 @@ import losses
 from schedulers import get_cosine_schedule_with_warmup
 from pprint import pprint
 
-import wandb
-
-wandb.init(
-    project = "DLUF_MixS2_Real",
-    config = opt,
-    name = opt.exp_name,
-    entity = "iisc-xdu"
-)
-
 pprint(opt)
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
@@ -157,7 +148,6 @@ def test():
         result = result.unsqueeze(1)
         result = torch.flip(result, [2, 3])
         result = make_grid(result, nrows=4) # torch 1.12
-        result = wandb.Image(result, caption=f"scene{j}")
 
         image_log[f'scene{j}'] = [result]
 
@@ -167,10 +157,6 @@ def test():
 if __name__ == "__main__":
     ## pipline of training
     for epoch in range(start_epoch+1, opt.max_epoch):
-        log_dict = {}
         train_loss = train()
-        log_dict['train_loss'] = train_loss
         image_log = test()
-        log_dict.update(image_log)
-        wandb.log(log_dict)
         torch.cuda.empty_cache()
