@@ -10,12 +10,13 @@ To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (
 
 # Comparison with State-of-the-art Methods
 
-![](./figures/RDLUF.png)
-
-![](./figures/MixS2T.png)
+![](./figures/performance.png)
 
 # Architecture
 
+![](./figures/RDLUF.png)
+
+![](./figures/MixS2T.png)
 
 # Usage 
 
