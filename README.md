@@ -39,8 +39,52 @@ Diagram of the Mix $S^2$ Transformer. (a) Mix $S^2$ Transformer adopts a U-shape
 
 ## Prepare Dataset:
 
-Download cave_1024_28 (Baidu Disk, code: fo0q | One Drive), CAVE_512_28 (Baidu Disk, code: ixoe | One Drive), KAIST_CVPR2021 (Baidu Disk, code: 5mmn | One Drive), TSA_simu_data (Baidu Disk, code: efu8 | One Drive), TSA_real_data (Baidu Disk, code: eaqe | One Drive), and then put them into the corresponding folders of datasets/ and recollect them as the following form:
+Download cave_1024_28 ([Baidu Disk](https://pan.baidu.com/s/1X_uXxgyO-mslnCTn4ioyNQ), code: `fo0q` | [One Drive](https://bupteducn-my.sharepoint.com/:f:/g/personal/mengziyi_bupt_edu_cn/EmNAsycFKNNNgHfV9Kib4osB7OD4OSu-Gu6Qnyy5PweG0A?e=5NrM6S)), CAVE_512_28 ([Baidu Disk](https://pan.baidu.com/s/1ue26weBAbn61a7hyT9CDkg), code: `ixoe` | [One Drive](https://mailstsinghuaeducn-my.sharepoint.com/:f:/g/personal/lin-j21_mails_tsinghua_edu_cn/EjhS1U_F7I1PjjjtjKNtUF8BJdsqZ6BSMag_grUfzsTABA?e=sOpwm4)), KAIST_CVPR2021 ([Baidu Disk](https://pan.baidu.com/s/1LfPqGe0R_tuQjCXC_fALZA), code: `5mmn` | [One Drive](https://mailstsinghuaeducn-my.sharepoint.com/:f:/g/personal/lin-j21_mails_tsinghua_edu_cn/EkA4B4GU8AdDu0ZkKXdewPwBd64adYGsMPB8PNCuYnpGlA?e=VFb3xP)), TSA_simu_data ([Baidu Disk](https://pan.baidu.com/s/1LI9tMaSprtxT8PiAG1oETA), code: `efu8` | [One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFDwE-7z1fzeWCRDA?e=ofvwrD)), TSA_real_data ([Baidu Disk](https://pan.baidu.com/s/1RoOb1CKsUPFu0r01tRi5Bg), code: `eaqe` | [One Drive](https://1drv.ms/u/s!Au_cHqZBKiu2gYFTpCwLdTi_eSw6ww?e=uiEToT)), and then put them into the corresponding folders of `datasets/` and recollect them as the following form:
 
+```shell
+|--RDLUF_MixS2
+    |--real
+    	|-- test_code
+    	|-- train_code
+    |--simulation
+    	|-- test_code
+    	|-- train_code
+    |--visualization
+    |--datasets
+        |--cave_1024_28
+            |--scene1.mat
+            |--scene2.mat
+            ：  
+            |--scene205.mat
+        |--CAVE_512_28
+            |--scene1.mat
+            |--scene2.mat
+            ：  
+            |--scene30.mat
+        |--KAIST_CVPR2021  
+            |--1.mat
+            |--2.mat
+            ： 
+            |--30.mat
+        |--TSA_simu_data  
+            |--mask_3d_shift.mat
+            |--mask.mat   
+            |--Truth
+                |--scene01.mat
+                |--scene02.mat
+                ： 
+                |--scene10.mat
+        |--TSA_real_data  
+            |--mask_3d_shift.mat
+            |--mask.mat   
+            |--Measurements
+                |--scene1.mat
+                |--scene2.mat
+                ： 
+                |--scene5.mat
+```
+
+ We use the CAVE dataset (cave_1024_28) as the simulation training set. Both the CAVE (CAVE_512_28) and KAIST (KAIST_CVPR2021) datasets are used as the real training set.
 
 ## Simulation Experiement:
 
@@ -53,6 +97,12 @@ Download cave_1024_28 (Baidu Disk, code: fo0q | One Drive), CAVE_512_28 (Baidu D
 
 
 ## Real Experiement:
+
+### Training
+
+### Testing
+
+### Visualization
 
 ## Acknowledgements
 
