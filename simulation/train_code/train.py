@@ -171,7 +171,7 @@ def main():
     psnr_max = 0
     for epoch in range(start_epoch + 1, opt.max_epoch + 1):
         print(f"==>Epoch{epoch}")
-        train_loss = train(epoch, logger)
+        # train_loss = train(epoch, logger)
         (pred, truth, psnr_all, ssim_all, psnr_mean, ssim_mean, image_log) = test(epoch, logger)
         if psnr_mean > psnr_max:
             psnr_max = psnr_mean
