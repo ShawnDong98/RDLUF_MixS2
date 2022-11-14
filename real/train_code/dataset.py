@@ -44,10 +44,7 @@ class dataset(tud.Dataset):
         pxm = random.randint(0, 660 - self.size)
         pym = random.randint(0, 714 - (self.size + (28 - 1) * 2))
 
-        mask_3d_shift = self.mask_3d_shift[pxm:pxm+self.size, pym:pym+(self.size+(28-1)*2), :]
-
-        print(mask_3d_shift.shape)
-      
+        mask_3d_shift = self.mask_3d_shift[pxm:pxm+self.size, pym:pym+(self.size+(28-1)*2), :]      
 
         if self.isTrain == True:
 
