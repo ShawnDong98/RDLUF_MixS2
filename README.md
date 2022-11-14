@@ -91,6 +91,25 @@ Download cave_1024_28 ([Baidu Disk](https://pan.baidu.com/s/1X_uXxgyO-mslnCTn4io
 ### Training
 
 
+```
+cd MST/simulation/train_code/
+
+# RdLUF-MixS2 3stage
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 3 --body_share_params 1  --clip_grad
+
+# RdLUF-MixS2 5stage
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 5 --body_share_params 1  --clip_grad
+
+# RdLUF-MixS2 7stage
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 7 --body_share_params 1  --clip_grad
+
+# RdLUF-MixS2 9stage
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 9 --body_share_params 1  --clip_grad
+
+# RdLUF-MixS2 9stage with independent parameters
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 9 --body_share_params 0  --clip_grad
+```
+
 ### Testing
 
 ### Visualization
