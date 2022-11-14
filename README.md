@@ -16,8 +16,15 @@ To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (
 
 # Architecture
 
+## Residual Degradation Learning Unfolding Framework
+
 <div align=center>
 <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/RDLUF.png" width = "700" height = "300" alt="">
+</div>
+
+## Mixing priors across Spectral and Spatial Transformer(PM)
+
+<div align=center>
 <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/MixS2T.png" width = "700" height = "500" alt="">
 </div>
 
