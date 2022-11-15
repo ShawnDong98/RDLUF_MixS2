@@ -96,16 +96,16 @@ Download cave_1024_28 ([Baidu Disk](https://pan.baidu.com/s/1X_uXxgyO-mslnCTn4io
 cd RDLUF_MixS2/simulation/train_code/
 
 # RdLUF-MixS2 3stage
-python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 3 --body_share_params 0  --clip_grad
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2_3stage/ --method duf_mixs2 --stage 3 --body_share_params 0  --clip_grad
 
 # RdLUF-MixS2 5stage
-python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 5 --body_share_params 1  --clip_grad
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2_5stage/ --method duf_mixs2 --stage 5 --body_share_params 1  --clip_grad
 
 # RdLUF-MixS2 7stage
-python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 7 --body_share_params 1  --clip_grad
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2_7stage/ --method duf_mixs2 --stage 7 --body_share_params 1  --clip_grad
 
 # RdLUF-MixS2 9stage
-python train.py --template duf_mixs2 --outf ./exp/duf_mixs2/ --method duf_mixs2 --stage 9 --body_share_params 1  --clip_grad
+python train.py --template duf_mixs2 --outf ./exp/duf_mixs2_9stage/ --method duf_mixs2 --stage 9 --body_share_params 1  --clip_grad
 ```
 
 The training log, trained model, and reconstrcuted HSI will be available in `RDLUF_MixS2/simulation/train_code/exp/` .
@@ -144,14 +144,65 @@ to calculate the PSNR and SSIM of the reconstructed HSIs.
 
 ### Visualization
 
+- Put the reconstruted HSI in `RDLUF_MixS2/visualization/simulation_results/results` and rename it as method.mat, e.g., RDLUF_MixS2_9stage.mat
+- Generate the RGB images of the reconstructed HSIs
+
+```
+cd RDLUF_MixS2/visualization/
+Run show_simulation.m 
+```
 
 ## Real Experiement:
 
 ### Training
 
+```
+cd RDLUF_MixS2/real/train_code/
+
+# RDLUF-MixS2 3stage
+python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_3stage/ --method duf_mixs2 --stage 3 --body_share_params 1
+
+# RDLUF-MixS2 5stage
+python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_5stage/ --method duf_mixs2 --stage 5 --body_share_params 1
+
+# RDLUF-MixS2 7stage
+python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_7stage/ --method duf_mixs2 --stage 7 --body_share_params 1
+
+# RDLUF-MixS2 9stage
+python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_9stage/ --method duf_mixs2 --stage 9 --body_share_params 1
+```
+
+The training log and trained model will be available in `RDLUF_MixS2/real/train_code/exp/`
+
 ### Testing
 
+```
+cd RDLUF_MixS2/real/test_code/
+
+# RDLUF-MixS2 3stage
+python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_3stage/ --method duf_mixs2 --stage 3 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_3stage.pth
+
+# RDLUF-MixS2 5stage
+python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_5stage/ --method duf_mixs2 --stage 5 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_5stage.pth
+
+# # RDLUF-MixS2 7stage
+python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_7stage/ --method duf_mixs2 --stage 7 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_7stage.pth
+
+# RDLUF-MixS2 9stage
+python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_9stage/ --method duf_mixs2 --stage 9 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_9stage.pth
+```
+
+The reconstrcuted HSI will be output into `RDLUF_MixS2/real/test_code/exp/`
+
 ### Visualization
+
+- Put the reconstruted HSI in `RDLUF_MixS2/visualization/real_results/results` and rename it as method.mat, e.g., RDLUF_MixS2_3stage.mat.
+- Generate the RGB images of the reconstructed HSI
+
+```
+cd RDLUF_MixS2/visualization/
+Run show_real.m
+```
 
 ## Acknowledgements
 
