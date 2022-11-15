@@ -84,7 +84,7 @@ for j in range(5):
 
 if not os.path.exists(save_path):  # Create the model directory if it doesn't exist
     os.makedirs(save_path)
-save_file = save_path + f'dluf_mixs2.mat'
+save_file = save_path + f'output.mat'
 res = np.concatenate(res, axis=0)
 print(res.shape)
 sio.savemat(save_file, {'pred':res})

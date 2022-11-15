@@ -192,7 +192,7 @@ python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_7stage/ --method du
 python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_9stage/ --method duf_mixs2 --stage 9 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_9stage.pth
 ```
 
-The reconstrcuted HSI will be output into `RDLUF_MixS2/real/test_code/exp/`
+The reconstrcuted HSI will be output into `RDLUF_MixS2/real/test_code/Results/`
 
 ### Visualization
 
