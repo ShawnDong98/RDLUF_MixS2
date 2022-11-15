@@ -5,7 +5,7 @@ from options import merge_duf_mixs2_opt
 
 parser = argparse.ArgumentParser(description="HyperSpectral Image Reconstruction Toolbox")
 parser.add_argument('--exp_name', type=str, default="rdluf_mixs2 real", help="name of experiment")
-parser.add_argument('--template', default='mst',
+parser.add_argument('--template', default='duf_mixs2',
                     help='You can set various templates in option.py')
 
 # Hardware specifications
@@ -26,10 +26,10 @@ parser.add_argument('--test_mask_path', default='../../datasets/TSA_real_data/ma
 
 
 # Saving specifications
-parser.add_argument('--outf', type=str, default='./exp/mst_s/', help='saving_path')
+parser.add_argument('--outf', type=str, default='./exp/rdluf_mixs2_3stage/', help='saving_path')
 
 # Model specifications
-parser.add_argument('--method', type=str, default='mst_s', help='method name')
+parser.add_argument('--method', type=str, default='duf_mixs2', help='method name')
 parser.add_argument('--pretrained_model_path', type=str, default=None, help='pretrained model directory')
 parser.add_argument('--resume_ckpt_path', type=str, default=None, help='resumed checkpoint directory')
 parser.add_argument("--input_setting", type=str, default='H',

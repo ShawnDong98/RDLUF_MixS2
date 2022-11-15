@@ -5,7 +5,7 @@ from options import merge_duf_mixs2_opt
 
 parser = argparse.ArgumentParser(description="HyperSpectral Image Reconstruction Toolbox")
 parser.add_argument('--exp_name', type=str, default="rdluf_mixs2", help="name of experiment")
-parser.add_argument('--template', default='mst',
+parser.add_argument('--template', default='duf_mixs2',
                     help='You can set various templates in option.py')
 
 # Hardware specifications
