@@ -163,6 +163,6 @@ def test():
 if __name__ == "__main__":
     ## pipline of training
     for epoch in range(start_epoch+1, opt.max_epoch):
-        train_loss = train()
+        # train_loss = train()
         image_log = test()
         torch.cuda.empty_cache()
