@@ -663,7 +663,6 @@ class DUF_MixS2(nn.Module):
         v_pre = shift_back_3d(v_pre)
         log_dict[f'stage{self.opt.stage-1}_v'] = v_pre
         out, enc_outputs, bottolenect_out, dec_outputs = self.tail_PM(v_pre, enc_outputs, bottolenect_out, dec_outputs)
-        # out = shift_3d(out)
         log_dict[f'stage{self.opt.stage-1}_x'] = out
     
         out = out[:, :, :, :256]
