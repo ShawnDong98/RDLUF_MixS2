@@ -4,7 +4,7 @@ import template
 from options import merge_duf_mixs2_opt
 
 parser = argparse.ArgumentParser(description="HyperSpectral Image Reconstruction Toolbox")
-parser.add_argument('--exp_name', type=str, default="dluf_mixs2 5st whole", help="name of experiment")
+parser.add_argument('--exp_name', type=str, default="rdluf_mixs2 real", help="name of experiment")
 parser.add_argument('--template', default='mst',
                     help='You can set various templates in option.py')
 
@@ -13,8 +13,6 @@ parser.add_argument("--gpu_id", type=str, default='0')
 
 # Data specifications
 parser.add_argument('--data_root', type=str, default='../../datasets/', help='dataset directory')
-# parser.add_argument('--data_path_CAVE', default='../../datasets/CAVE_512_28/', type=str,
-#                         help='path of data')
 parser.add_argument('--data_path_CAVE', default='../../datasets/cave_1024_28/', type=str,
                         help='path of data')
 parser.add_argument('--data_path_KAIST', default='../../datasets/KAIST_CVPR2021/', type=str,
