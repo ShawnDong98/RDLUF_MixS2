@@ -5,7 +5,7 @@ This repo is the implementation of paper "Residual Degradation Learning Unfoldin
 
 |                          *Scene 1*                           |                          *Scene 6*                           |                          *Scene 8*                           |                          *Scene 10*                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="./figure/scene1.gif"  height=170 width=170> | <img src="./figure/scene6.gif" width=170 height=170> | <img src="./figure/scene8.gif" width=170 height=170> | <img src="./figure/scene10.gif" width=170 height=170> |
+| <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene1.gif"  height=170 width=170> | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene6.gif" width=170 height=170> | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene8.gif" width=170 height=170> | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene10.gif" width=170 height=170> |
 
 
 # Abstract
