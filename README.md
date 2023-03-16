@@ -8,6 +8,10 @@ This repo is the implementation of paper "Residual Degradation Learning Unfoldin
 | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene1.gif"  height=170 width=170> | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene6.gif" width=170 height=170> | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene8.gif" width=170 height=170> | <img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/scene10.gif" width=170 height=170> |
 
 
+## News
+
+- **2023.03.16**: release pretrained weights in `simulation/test_code/checkpoints/` and `real/test_code/checkpoints/`
+
 # Abstract
 
 To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (CASSI) is proposed. A core problem of the CASSI system is to recover the reliable and fine underlying 3D spectral cube from the 2D measurement. By alternately solving a data subproblem and a prior subproblem, deep unfolding methods achieve good performance. However, in the data subproblem, the used sensing matrix is ill-suited for the real degradation process due to the device errors caused by phase aberration, distortion; in the prior subproblem,  it is important to design a suitable model to jointly exploit both spatial and spectral priors. In this paper, we propose a Residual Degradation Learning Unfolding Framework (RDLUF), which bridges the gap between the sensing matrix and the degradation process. Moreover, a Mix $S^2$ Transformer is designed via mixing priors across spectral and spatial to strengthen the spectral-spatial representation capability. Finally, plugging the Mix $S^2$ Transformer into the RDLUF leads to an end-to-end trainable and interpretable neural network RDLUF-Mix $S^2$ . Experimental results establish the superior performance of the proposed method over existing ones.
@@ -165,15 +169,6 @@ cd RDLUF_MixS2/real/train_code/
 
 # RDLUF-MixS2 3stage
 python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_3stage/ --method duf_mixs2 --stage 3 --body_share_params 1
-
-# RDLUF-MixS2 5stage
-python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_5stage/ --method duf_mixs2 --stage 5 --body_share_params 1
-
-# RDLUF-MixS2 7stage
-python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_7stage/ --method duf_mixs2 --stage 7 --body_share_params 1
-
-# RDLUF-MixS2 9stage
-python train.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_9stage/ --method duf_mixs2 --stage 9 --body_share_params 1
 ```
 
 The training log and trained model will be available in `RDLUF_MixS2/real/train_code/exp/`
@@ -185,15 +180,6 @@ cd RDLUF_MixS2/real/test_code/
 
 # RDLUF-MixS2 3stage
 python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_3stage/ --method duf_mixs2 --stage 3 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_3stage.pth
-
-# RDLUF-MixS2 5stage
-python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_5stage/ --method duf_mixs2 --stage 5 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_5stage.pth
-
-# # RDLUF-MixS2 7stage
-python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_7stage/ --method duf_mixs2 --stage 7 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_7stage.pth
-
-# RDLUF-MixS2 9stage
-python test.py --template duf_mixs2 --outf ./exp/rdluf_mixs2_9stage/ --method duf_mixs2 --stage 9 --body_share_params 1 --pretrained_model_path ./checkpoints/RDLUF_MixS2_9stage.pth
 ```
 
 The reconstrcuted HSI will be output into `RDLUF_MixS2/real/test_code/Results/`
@@ -208,6 +194,20 @@ cd RDLUF_MixS2/visualization/
 Run show_real.m
 ```
 
+### 
+
 ## Acknowledgements
 
 Our code is heavily borrowed from [MST](https://github.com/caiyuanhao1998/MST)  and [DGSMP](https://github.com/TaoHuang95/DGSMP), thanks for their generous open source.
+
+
+## Citation
+
+If this code helps you, please consider citing our works:
+
+@inproceedings{mst,
+  title={Residual Degradation Learning Unfolding Framework with Mixing Priors across Spectral and Spatial for Compressive Spectral Imaging},
+  author={Yubo Dong and Dahua Gao and Tian Qiu and Yuyan Li and Minxi Yang and Guangming Shi},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2023}
+}
