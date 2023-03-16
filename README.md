@@ -205,9 +205,11 @@ Our code is heavily borrowed from [MST](https://github.com/caiyuanhao1998/MST)  
 
 If this code helps you, please consider citing our works:
 
+```shell
 @inproceedings{mst,
   title={Residual Degradation Learning Unfolding Framework with Mixing Priors across Spectral and Spatial for Compressive Spectral Imaging},
   author={Yubo Dong and Dahua Gao and Tian Qiu and Yuyan Li and Minxi Yang and Guangming Shi},
   booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2023}
 }
+```
