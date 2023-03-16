@@ -3,6 +3,10 @@
 
 This repo is the implementation of paper "Residual Degradation Learning Unfolding Framework with Mixing Priors across Spectral and Spatial for Compressive Spectral Imaging"
 
+|                          *Scene 1*                           |                          *Scene 6*                           |                          *Scene 8*                           |                          *Scene 10*                           |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| <img src="./figure/scene1.gif"  height=170 width=170> | <img src="./figure/scene6.gif" width=170 height=170> | <img src="./figure/scene8.gif" width=170 height=170> | <img src="./figure/scene10.gif" width=170 height=170> |
+
 
 # Abstract
 
@@ -11,7 +15,7 @@ To acquire a snapshot spectral image, coded aperture snapshot spectral imaging (
 # Comparison with state-of-the-art methods
 
 <div align=center>
-<img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/performance.png" width = "350" height = "300" alt="">
+<img src="https://github.com/ShawnDong98/RDLUF_MixS2/blob/master/figures/Teaser.png" width = "350" height = "300" alt="">
 </div>
 
  PSNR-Parameters comparisons with previous HSI reconstruction methods. The vertical axis is PSNR (in dB performance), and the horizontal axis is Parameters(memory cost). Our proposed Residual Degradation Learning Unfolding Framework with Mixing priors across Spatial and Spectral(RDLUF-Mix $S^2$ ) Transformers outperforms previous methods while requiring fewer parameters.
