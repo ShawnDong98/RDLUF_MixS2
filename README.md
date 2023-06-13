@@ -194,8 +194,6 @@ cd RDLUF_MixS2/visualization/
 Run show_real.m
 ```
 
-### 
-
 ## Acknowledgements
 
 Our code is heavily borrowed from [MST](https://github.com/caiyuanhao1998/MST)  and [DGSMP](https://github.com/TaoHuang95/DGSMP), thanks for their generous open source.
@@ -206,10 +204,11 @@ Our code is heavily borrowed from [MST](https://github.com/caiyuanhao1998/MST)  
 If this code helps you, please consider citing our works:
 
 ```shell
-@inproceedings{rdluf_mixs2,
+@inproceedings{dong2023residual,
   title={Residual Degradation Learning Unfolding Framework with Mixing Priors across Spectral and Spatial for Compressive Spectral Imaging},
-  author={Yubo Dong and Dahua Gao and Tian Qiu and Yuyan Li and Minxi Yang and Guangming Shi},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  author={Dong, Yubo and Gao, Dahua and Qiu, Tian and Li, Yuyan and Yang, Minxi and Shi, Guangming},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={22262--22271},
   year={2023}
 }
 ```
